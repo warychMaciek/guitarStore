@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+.button {
+    font-family: 'Metal Mania', cursive;
+    font-size: 20px;
+    border: rgb(40, 46, 46) 2px solid;
+    padding: 8px 16px;
+    transition: 0.3s;
+    cursor: pointer;
+    background: rgb(40, 46, 46);
+    color: whitesmoke;
+}
+.button:hover {
+    color: rgb(40, 46, 46);
+    background: whitesmoke;
+    box-shadow: rgb(40, 46, 46) 0 0 10px 2px;
+}
+.payButton {
+    @extend .button;
+    background: goldenrod;
+    color: rgb(40, 46, 46);
+}
+.payButton:hover {
+    background: rgb(40, 46, 46);
+    color: goldenrod;
+    box-shadow: goldenrod 0 0 10px 2px;
+}
+
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+}

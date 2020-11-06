@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
+import Navbar from './Components/Navbar/Navbar';
+import Cart from './Components/Cart/Cart';
+import Default from './Components/Default/Default';
+import ProductList from './Components/ProductList/ProductList';
+import Details from './Components/Details/Details';
+import Modal from './Components/Modal/Modal';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={ProductList}></Route>
+        <Route path="/details" component={Details}></Route>
+        <Route path="/cart" component={Cart}></Route>
+        <Route component={Default}></Route>
+      </Switch>
+      <Modal />
+      <footer>
+        <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      </footer>
+    </>
   );
 }
 
